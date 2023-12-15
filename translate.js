@@ -14,7 +14,7 @@ async function aiTranslate(input) {
         messages: [
             {
                 role: "system",
-                content: `You will be provided with a sentence in ${language.source.openai}, and your task is to translate it into ${language.destination.openai}. Preserve linebreaks and formating`,
+                content: `You will be provided with a sentence in ${language.source.openai}, and your task is to translate it into ${language.destination.openai}. Preserve linebreaks and formating. If an empty string is provided, return an empty string`,
             },
             { role: "user", content: input },
         ],
@@ -36,10 +36,13 @@ async function googleTranslate(input) {
 
     const res = await fetch(url);
     const json = await res.json();
+    if (!json[0]) {
+        return "";
+    }
     const translatedLines = json[0].map((arr) => {
         return arr[0];
     });
-    return translatedLines.join();
+    return translatedLines.join("");
 }
 
 export { aiTranslate, googleTranslate };
