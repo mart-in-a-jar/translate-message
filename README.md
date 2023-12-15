@@ -1,0 +1,1 @@
+Translate with openAi og google translate
