@@ -82,9 +82,9 @@ function App() {
                     loading={isLoading}
                     text={"Oversett"}
                 />
-                <div className="output flex gap-3 flex-col lg:flex-row">
+                <div className="output flex gap-3 flex-col lg:flex-row w-full justify-center">
                     {showAi && (
-                        <div className="engelsk flex flex-col gap-3 lg:w-[700px]">
+                        <div className="engelsk flex flex-col gap-3 flex-1 max-w-[700px]">
                             <h2>Engelsk (ai)</h2>
                             <Subject
                                 loading={isLoading}
@@ -99,7 +99,7 @@ function App() {
                         </div>
                     )}
                     {showGoogle && (
-                        <div className="engelsk flex flex-col gap-3 lg:w-[700px]">
+                        <div className="engelsk flex flex-col gap-3 flex-1 max-w-[700px]">
                             <h2>Engelsk (google)</h2>
                             <Subject
                                 loading={isLoading}
