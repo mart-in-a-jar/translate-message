@@ -3,7 +3,7 @@ import { useState } from "react";
 const Chat = () => {
     const [showChat, setShowChat] = useState(true);
     return (
-        <div className="absolute bottom-2 right-2">
+        <div className="absolute bottom-2 right-2 border dark:border-none">
             {showChat ? (
                 <>
                     <iframe
