@@ -7,7 +7,7 @@ const language = {
     destination: { openai: "english", google: "en" },
 };
 
-const openai = new OpenAI({ apiKey: process.env.API_KEY });
+const openai = new OpenAI({ apiKey: process.env.API_KEY_OPENAI });
 
 async function aiTranslate(input) {
     const response = await openai.chat.completions.create({
