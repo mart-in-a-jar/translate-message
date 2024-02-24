@@ -10,13 +10,15 @@ const Header = () => {
     }
 
     return (
-        <header className="absolute top-2 right-2 flex gap-2">
-            <Link to="/me">
-                <Avatar />
-            </Link>
-            <button className="btn btn-outline" onClick={auth.logout}>
-                Log out
-            </button>
+        <header className="flex justify-end mr-2">
+            <div className="flex gap-2">
+                <Link to="/me">
+                    <Avatar />
+                </Link>
+                <button className="btn btn-outline" onClick={auth.logout}>
+                    Log out
+                </button>
+            </div>
         </header>
     );
 };

@@ -7,10 +7,10 @@ const Me = () => {
 
     return (
         <div>
-            <Link className="btn btn-primary m-2" to="/">
+            <Link className="btn btn-primary m-2 absolute top-0" to="/">
                 Dashboard
             </Link>
-            // Style this
+            {/* // Style this */}
             <div className="flex justify-center">{user.name}</div>
         </div>
     );
