@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Chat = () => {
-    const [showChat, setShowChat] = useState(true);
+    const [showChat, setShowChat] = useState(false);
     return (
         <div className="fixed bottom-2 right-2">
             <div className={!showChat ? "hidden" : ""}>
