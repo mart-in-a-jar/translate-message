@@ -121,7 +121,7 @@ function App() {
                     loading={isLoading}
                 />
             </Browser>
-            {/* <Chat /> */}
+            <Chat />
         </div>
     );
 }
