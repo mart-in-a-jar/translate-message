@@ -15,9 +15,10 @@ const Header = () => {
                 <div tabIndex={1} role="button">
                     <Avatar />
                 </div>
-                <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32">
+                <ul className="dropdown-content z-[1] menu shadow bg-base-100 rounded-box w-32">
                     <li>
                         <Link
+                            className="py-4"
                             to="/me"
                             onClick={() => {
                                 const element = document.activeElement;
@@ -30,7 +31,9 @@ const Header = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link onClick={auth.logout}>Logg ut</Link>
+                        <Link className="py-4" onClick={auth.logout}>
+                            Logg ut
+                        </Link>
                     </li>
                 </ul>
             </div>
