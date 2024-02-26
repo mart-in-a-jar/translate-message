@@ -1,4 +1,6 @@
 Translate with openAi and google translate
+Chatbot created with [Copilot Studio](https://copilotstudio.microsoft.com/)
+Login with Vipps
 
 Environment variables needed:
 
@@ -9,5 +11,3 @@ Environment variables needed:
 - MSN_VIPPS
 - REDIRECT_URI_VIPPS
 - API_URL_VIPPS
-
-Chatbot created with [Copilot Studio](https://copilotstudio.microsoft.com/)
