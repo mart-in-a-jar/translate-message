@@ -7,11 +7,35 @@ const Me = () => {
 
     return (
         <div>
-            <Link className="btn btn-primary m-2 absolute top-0" to="/">
+            <Link
+                className="btn btn-primary m-2 absolute top-0"
+                to="/"
+                tabIndex={0}
+            >
                 Dashboard
             </Link>
-            {/* // Style this */}
-            <div className="flex justify-center">{user.name}</div>
+            <div className="user-info mt-4 flex justify-center">
+                {user && (
+                    <div className="mockup-code">
+                        <pre data-prefix=">" className="text-success">
+                            <code>{user.name}</code>
+                        </pre>
+                        <pre data-prefix=">" className="text-warning">
+                            <code>{user?.phone_number.slice(2)}</code>
+                        </pre>
+                        <pre data-prefix=">" className="text-error">
+                            <code className="whitespace-normal">
+                                {user?.address?.formatted}
+                            </code>
+                        </pre>
+                        <pre data-prefix=">" className="text-info">
+                            {new Date(user.birthdate).toLocaleDateString(
+                                "no-nb"
+                            )}
+                        </pre>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

@@ -11,13 +11,28 @@ const Header = () => {
 
     return (
         <header className="flex justify-end mr-2">
-            <div className="flex gap-2">
-                <Link to="/me">
+            <div className="dropdown dropdown-end m-2">
+                <div tabIndex={1} role="button">
                     <Avatar />
-                </Link>
-                <button className="btn btn-outline" onClick={auth.logout}>
-                    Log out
-                </button>
+                </div>
+                <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32">
+                    <li>
+                        <Link
+                            to="/me"
+                            onClick={() => {
+                                const element = document.activeElement;
+                                if (element) {
+                                    element.blur();
+                                }
+                            }}
+                        >
+                            Profil
+                        </Link>
+                    </li>
+                    <li>
+                        <Link onClick={auth.logout}>Logg ut</Link>
+                    </li>
+                </ul>
             </div>
         </header>
     );

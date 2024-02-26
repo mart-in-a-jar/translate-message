@@ -15,8 +15,8 @@ const Login = () => {
     const url = `${baseUrl}/access-management-1.0/access/oauth2/auth?client_id=${clientId}&response_type=code&scope=openid%20name%20phoneNumber%20address%20birthDate&state=8652682f-ba1d-4719-b1ec-8694ba97bde7&redirect_uri=${redirectUri}`;
 
     return (
-        <div className="flex items-center justify-center min-h-screen">
-            <div className="max-w-sm">
+        <div className="flex items-center justify-center h-[80vh]">
+            <div className="max-w-sm mx-2">
                 <a href={url}>
                     <img src={vippButtonImage} alt="Log inn with vipps" />
                 </a>
