@@ -12,7 +12,7 @@ const redirectUri = isDev
     : "https://demo.ssnit.no/callback";
 
 const Login = () => {
-    const url = `${baseUrl}/access-management-1.0/access/oauth2/auth?client_id=${clientId}&response_type=code&scope=openid%20name%20phoneNumber%20address%20birthDate&state=8652682f-ba1d-4719-b1ec-8694ba97bde7&redirect_uri=${redirectUri}`;
+    const url = `${baseUrl}/access-management-1.0/access/oauth2/auth?client_id=${clientId}&response_type=code&scope=openid%20name%20phoneNumber%20address%20birthDate%20email&state=8652682f-ba1d-4719-b1ec-8694ba97bde7&redirect_uri=${redirectUri}`;
 
     return (
         <div className="flex items-center justify-center h-[80vh]">
