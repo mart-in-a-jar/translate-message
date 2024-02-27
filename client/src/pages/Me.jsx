@@ -17,18 +17,21 @@ const Me = () => {
             <div className="user-info mt-4 flex justify-center">
                 {user && (
                     <div className="mockup-code">
-                        <pre data-prefix=">" className="text-success">
+                        <pre data-prefix=">" className="text-primary">
                             <code>{user.name}</code>
                         </pre>
-                        <pre data-prefix=">" className="text-warning">
+                        <pre data-prefix=">" className="text-accent">
+                            <code>{user?.email}</code>
+                        </pre>
+                        <pre data-prefix=">" className="text-secondary">
                             <code>{user?.phone_number.slice(2)}</code>
                         </pre>
-                        <pre data-prefix=">" className="text-error">
+                        <pre data-prefix=">" className="text-warning">
                             <code className="whitespace-normal">
                                 {user?.address?.formatted}
                             </code>
                         </pre>
-                        <pre data-prefix=">" className="text-info">
+                        <pre data-prefix=">" className="text-success">
                             {new Date(user.birthdate).toLocaleDateString(
                                 "no-nb"
                             )}
