@@ -9,7 +9,7 @@ const Me = () => {
         <div>
             <Link
                 className="btn btn-primary m-2 absolute top-0"
-                to="/"
+                to="/dashboard"
                 tabIndex={0}
             >
                 Dashboard
