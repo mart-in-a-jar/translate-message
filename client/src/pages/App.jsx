@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import Browser from "../components/Browser";
+import Button from "../components/Button";
 import Input from "../components/Input";
 import Subject from "../components/Subject";
 import Toggle from "../components/Toggle";
-import Button from "../components/Button";
-import Chat from "../components/Chat";
 
 function App() {
     const [input, setInput] = useState("");
@@ -121,7 +120,6 @@ function App() {
                     loading={isLoading}
                 />
             </Browser>
-            <Chat />
         </div>
     );
 }
