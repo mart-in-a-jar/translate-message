@@ -5,7 +5,7 @@ const isDev = import.meta.env.DEV;
 const baseUrl = isDev ? "https://apitest.vipps.no" : "https://api.vipps.no";
 const clientId = isDev
     ? "5a9d5335-b8af-40b0-b8fd-a477efa216ca"
-    : "f652f621-e239-45e1-bb2b-4b7c3a1af5eb";
+    : "aa31125a-323d-4ccd-999b-359347929d30";
 
 const redirectUri = isDev
     ? "http://localhost:5173/callback"
