@@ -6,6 +6,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(
         JSON.parse(localStorage.getItem("user")) || null
     );
+    const [displayErrorMessage, setDisplayErrorMessage] = useState(false);
     const navigate = useNavigate();
 
     const getUser = async (code) => {
@@ -20,13 +21,16 @@ const AuthProvider = ({ children }) => {
                 }),
             });
             if (!res.ok) {
+                setDisplayErrorMessage(true);
                 return navigate("/login");
             }
             const user = await res.json();
             setUser(user);
             localStorage.setItem("user", JSON.stringify(user));
+            setDisplayErrorMessage(false);
             return navigate("/");
         } catch (error) {
+            setDisplayErrorMessage(true);
             console.error(error);
             navigate("/login");
         }
@@ -39,7 +43,14 @@ const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, getUser, logout }}>
+        <AuthContext.Provider
+            value={{
+                user,
+                getUser,
+                logout,
+                displayErrorMessage,
+            }}
+        >
             {children}
         </AuthContext.Provider>
     );
