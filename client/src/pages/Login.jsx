@@ -19,9 +19,13 @@ const Login = () => {
     return (
         <div className="flex flex-col items-center justify-center gap-3 h-[80vh]">
             <div className="max-w-sm mx-2">
-                <a href={url}>
-                    <img src={vippButtonImage} alt="Log inn with vipps" />
-                </a>
+                <button
+                    onClick={() => {
+                        window.location.replace(url);
+                    }}
+                >
+                    <img src={vippButtonImage} alt="Log in with vipps" />
+                </button>
             </div>
             <div className="h-8">
                 {auth.displayErrorMessage && (
