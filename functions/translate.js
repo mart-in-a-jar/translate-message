@@ -19,7 +19,7 @@ async function aiTranslate(input) {
                 },
                 { role: "user", content: input },
             ],
-            model: "gpt-3.5-turbo",
+            model: "gpt-4o-mini",
         });
 
         const output = response.choices[0].message.content;
