@@ -1,4 +1,5 @@
-Translate with openAi and google translate
+Translate with openAi and google translate  
+ - Using GPT-3.5 Turbo model
 Chatbot created with [Copilot Studio](https://copilotstudio.microsoft.com/)
 Login with Vipps
 

@@ -22,8 +22,12 @@ translate.post("/google", async (req, res) => {
 
 translate.post("/ai", async (req, res) => {
     const input = req.body.input;
-    const translated = await aiTranslate(input);
-    res.json({ data: translated });
+    try {
+        const translated = await aiTranslate(input);
+        res.json({ data: translated });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 
 app.use(express.static(path.join(__dirname, "./client/dist")));
