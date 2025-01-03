@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../hooks/useAuth";
 
 const AuthProvider = ({ children }) => {
+    // should validate a jwt before setting user, or people can just set a user object in localstorage to access the page
     const [user, setUser] = useState(
         JSON.parse(localStorage.getItem("user")) || null
     );
