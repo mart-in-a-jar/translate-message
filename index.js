@@ -45,6 +45,7 @@ app.get("/styre", (req, res, next) => {
     if (
         password !== process.env.STYRE_PASSWORD
     ) {
+        res.setHeader("WWW-Authenticate", "Basic");
         return res.status(401).send("Ugyldig passord");
     }
 
