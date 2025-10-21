@@ -30,6 +30,27 @@ translate.post("/ai", async (req, res) => {
     }
 });
 
+app.get("/styre", (req, res, next) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith("Basic ")) {
+        res.setHeader("WWW-Authenticate", "Basic");
+        return res.status(401).send("Logg inn for å se denne siden");
+    }
+
+    const base64Credentials = authHeader.split(" ")[1];
+    const credentials = Buffer.from(base64Credentials, "base64").toString(
+        "ascii",
+    );
+    const password = credentials.split(":")[1];
+    if (
+        password !== process.env.STYRE_PASSWORD
+    ) {
+        return res.status(401).send("Ugyldig passord");
+    }
+
+    next();
+});
+
 app.use(express.static(path.join(__dirname, "./client/dist")));
 app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "./client/dist/index.html"));

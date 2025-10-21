@@ -9,6 +9,7 @@ import App from "./pages/App.jsx";
 import Callback from "./pages/Callback.jsx";
 import Login from "./pages/Login.jsx";
 import Me from "./pages/Me.jsx";
+import Report from "./pages/Report.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                     <Route path="/dashboard" element={<App />} />
                     <Route path="/me" element={<Me />} />
                 </Route>
+                <Route path="/styre" element={<Report />} />
             </Routes>
         </AuthProvider>
     </BrowserRouter>
