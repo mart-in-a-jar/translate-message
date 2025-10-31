@@ -11,6 +11,11 @@ import Login from "./pages/Login.jsx";
 import Me from "./pages/Me.jsx";
 import Report from "./pages/Report.jsx";
 
+// Restrict allowed pages on domain reports.ssn.no
+if (window.location.hostname === "reports.ssn.no" && window.location.pathname !== "/styre") {
+    window.location.replace("/styre");
+}
+
 ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
         <AuthProvider>
